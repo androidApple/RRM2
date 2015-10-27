@@ -1,0 +1,98 @@
+ <ion-view title="Single Party">
+	  <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		</ion-nav-buttons>
+	
+        <ion-content has-header="true" padding="true">
+		
+		
+  <div class="list">
+		
+			
+	
+		  	<div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">Party Name</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+					<input type="text"   value={{singlePartyitemSelectedValue}}>
+                  </label>  
+
+					<div class="btn-seach_button">
+				<a class="button button-outline icon-right ion-search button-balanced btn-seach_button" ng-click="individualPartyListModalShow()"></a>
+				</div>
+				</div>
+				
+			  </div>
+		  
+				  <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">From Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="singleParty.fromDate" >
+                  </label>            
+				</div>
+			  </div>
+			   <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">To Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="singleParty.toDate" >
+                  </label>            
+				</div>
+			  </div>
+		  
+		  
+		 	
+			  <div class="item item-input-inset button-margin-from-inputfield border-background-for_label-inputfield"> 
+				<div class="label-width-first">						
+				</div>
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width" >                                 
+            <button  class="button button-block button-calm" ng-click="doSearachAction(singleParty)" style="width:100%;">
+			 Search
+			</button>                    
+            </div>
+			  </div>  
+		
+		</div>
+		
+		
+			<ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror1('head', 'list')">
+       
+		 <div class="item item-header item-positive row row-item acs-width-area">
+          <div class="col col-center acs-slno">SL</div>
+          <div class="col col-center acs-date-amout">Trans. Date</div>
+          <div class="col col-left acs-narration" >Description</div>
+		   <div class="col col-right acs-date-amout" >Unit Price</div>
+          <div class="col col-right acs-date-amout">Qty</div>
+		   <div class="col col-left acs-date-amout">Payable</div>
+		   <div class="col col-left acs-date-amout">Paid</div>
+		    <div class="col col-left acs-date-amout">Balance</div>
+		   
+        
+        </div>
+      </ion-scroll>
+	   <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror1('list', 'head')" delegate-handle="list"  >
+	  
+        <div class="item row row-item acs-width-area" ng-repeat="x in singlePartyListStatement.individualPartyListNodes " ng-class-odd="'odd'" ng-class-even="'even'" >
+          <div class="col col-center col-sep acs-slno">{{x.snNo}}</div>
+          <div class="col col-center col-sep  acs-date-amout">{{ x.transactionDate}}</div>
+          <div class="col col-left col-sep  acs-narration">{{x.description}}</div>
+          <div class="col col-right col-sep acs-date-amout">{{ x.unitPrice }}</div>
+		   <div class="col col-right col-sep  acs-date-amout">{{ x.qty  }}</div>
+			<div class="col col-right col-sep acs-date-amout">{{ x.payable}}</div>
+			<div class="col col-right col-sep acs-date-amout">{{ x.paid}}</div>
+			<div class="col col-right col-sep  acs-date-amout">{{ x.balance }}</div>
+			   
+      
+        </div>
+     
+
+      </ion-scroll>
+        </ion-content>
+      </ion-view>

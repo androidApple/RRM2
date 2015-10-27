@@ -1,0 +1,26 @@
+<div class="adic-modal">
+  <ion-modal-view class="adic-popup">
+        <ion-header-bar class="bar bar-header bar-royal">
+          <h4 class="title">Please Select From The List</h4>
+          <button class="button button-clear button-primary" ng-click="singleCustomerListModalhide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+				<div class="list list-inset">
+		  <label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="input.searchInput">
+		  </label>
+		</div>
+		
+
+			  
+		<div class="list margin-for-modal-list" ng-repeat="x in singleCustomerListIdName.individualCustomerIDNameNodes | filter:input.searchInput" ng-click="btnSingleCustomerSelectedItem(x)" >
+			<!--	<li class="item">
+			 <a></a>
+			</li>-->
+			 <a class="item item-model-text">{{x.slNo}}&nbsp;&nbsp;&nbsp;&nbsp;{{x.individualCustomerNameID}}</a>
+		 
+		</div>
+        </ion-content>
+      </ion-modal-view>
+ </div>

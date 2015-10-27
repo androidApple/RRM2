@@ -1,0 +1,87 @@
+ <ion-view title="Order Status">
+	  <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		</ion-nav-buttons>
+	
+        <ion-content has-header="true" padding="true">
+		
+		
+  <div class="list">
+	
+		  
+				  <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">From Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="orderStatus.fromDate" >
+                  </label>            
+				</div>
+			  </div>
+			   <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">To Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="orderStatus.toDate" >
+                  </label>            
+				</div>
+			  </div>
+		  
+		  
+		 	
+			  <div class="item item-input-inset button-margin-from-inputfield border-background-for_label-inputfield"> 
+				<div class="label-width-first">						
+				</div>
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width" >                                 
+            <button  class="button button-block button-calm" ng-click="doSearachAction(orderStatus)" style="width:100%;">
+			 Search
+			</button>                    
+            </div>
+			  </div>  
+		
+		</div>
+		
+		
+			<ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror1('head', 'list')">
+       
+		 <div class="item item-header item-positive row row-item acs-width-area">
+          <div class="col col-center acs-slno">SL</div>
+          <div class="col col-center acs-date-amout">Purchase Date</div>
+          <div class="col col-left acs-narration" >OrderSatus</div>
+		   <div class="col col-right acs-date-amout" >Originating Date</div>
+          <div class="col col-right acs-date-amout">Delivery Status</div>
+		   <div class="col col-left acs-date-amout">Delivery Date</div>
+		   <div class="col col-left acs-date-amout">User Status</div>
+		    <div class="col col-left acs-date-amout">User Status Date</div>
+			 <div class="col col-left acs-date-amout">Details</div>
+		   
+        
+        </div>
+      </ion-scroll>
+	   <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror1('list', 'head')" delegate-handle="list"  >
+	  
+        <div class="item row row-item acs-width-area" ng-repeat="x in clientPurchaseOrderStatusList.statusNode " ng-class-odd="'odd'" ng-class-even="'even'" >
+          <div class="col col-center col-sep acs-slno">{{x.slNo}}</div>
+          <div class="col col-center col-sep  acs-date-amout">{{ x.purchaseDate}}</div>
+          <div class="col col-left col-sep  acs-narration">{{x.paymentType}}</div>
+          <div class="col col-right col-sep acs-date-amout">{{ x.originatingDate }}</div>
+		   <div class="col col-right col-sep  acs-date-amout">{{ x.deliveredStatus  }}</div>
+			<div class="col col-right col-sep acs-date-amout">{{ x.deliveredStatusDate}}</div>
+			<div class="col col-right col-sep acs-date-amout">{{ x.userStatus}}</div>
+			<div class="col col-right col-sep  acs-date-amout">{{ x.userStatusDate }}</div>
+			  <div class="col col-center col-sep  acs-date-amout">
+					
+					<div class="btn-seach_button">
+				<a class="button button-outline icon-right ion-grid button-balanced btn-seach_button" ng-click="btnOrderDeatailsGo(x)"></a>
+				</div>
+				</div> 
+      
+        </div>
+     
+
+      </ion-scroll>
+        </ion-content>
+      </ion-view>

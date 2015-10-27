@@ -1,0 +1,60 @@
+<ion-view view-title="Location">
+<ion-nav-buttons side="right">
+    <a style="color: white;" class="button icon-left button-icon icon ion-loop" ng-click="btnSyncBranchLocation2()">Sync</a> 
+   <!--<a style="color: white;" class="button button-icon icon ion-folder" ng-click="btnSyncBranchLocation1()"></a>-->
+</ion-nav-buttons>
+  <ion-content>
+  
+  <div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="input.searchInput">
+  </label>
+</div>
+
+
+<!--Begin href="#/tab/locations/"-->
+
+<ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="category in officeLocation | filter:input.searchInput" type="item-text-wrap"  ng-class-odd="'odd'" ng-class-even="'even'">
+       
+
+		<h2>Addr.:&nbsp;{{category.slno}}</h2>
+		<h2>Office :&nbsp;{{category.office_type}}</h2>
+		<h2>Address :&nbsp;{{category.office_address}}</h2>
+		<h2>Phone :&nbsp;{{category.phone}}</h2>
+		<h2>Fax :&nbsp;{{category.fax}}</h2>
+		<h2>HotLine :&nbsp;{{category.hotline}}</h2>
+		<h2>Email :&nbsp;{{category.email}}</h2>
+		
+		       
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+        <!--End-->
+
+<!--
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in branchLocationsData.branchLocationNodes | filter:input.searchInput" type="item-text-wrap" href="#/tab/locations/" ng-class-odd="'odd'" ng-class-even="'even'">
+        <h2 ng-hide={{chat.branchCode}}></h2>
+        <h2>Branch:&nbsp;{{chat.sl}}.&nbsp;&nbsp;{{chat.branchName}}</h2>
+		<h2>Address:&nbsp;{{chat.branchAddress}}</h2>
+		<h2>Ph:&nbsp;{{chat.phone}}</h2>
+		<h2>Fax:&nbsp;{{chat.fax}}</h2>
+        
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    -->
+    
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,40 @@
+ <ion-view title="Welcome">
+			  <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+			  </ion-nav-buttons>
+			  <ion-content class="has-header">
+
+					  <p class="input-label-welcome-message">{{loginMessage}}</p>
+					<div class="row">
+					<div class="col">
+					  <button   ng-click="btnPurchaseOrder()" class="button icon-left ion btnBlockHome button-stable">
+						<i class="ionSize ion-ios-cart"></i><br>Purchase Order
+					  </button>
+					</div>
+					<div class="col">
+					  <button ng-click="btnClientPurchaseOrderStatus()"  class="button icon-left ion btnBlockHome button-stable">
+						<i class="ionSize ion-document-text"></i><br>Order Status
+						
+					  </button>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col">
+					  <button  ng-click="btnViewStatement()" class="button icon-left ion btnBlockHome button-stable">
+						<i class="ionSize ion-ios-book"></i><br>View Statement
+						</button>
+					</div>
+					<div class="col">
+					  <button ng-click="btnUserAccept()" class="button icon-left ion btnBlockHome button-stable">
+						<i class="ionSize ion-ios-people-outline"></i><br>Accept Order
+					  </button>
+					</div>
+				  </div>
+				  
+				
+				   
+				
+				  
+				  
+			  </ion-content>
+			</ion-view>

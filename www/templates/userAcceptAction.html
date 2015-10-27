@@ -1,0 +1,84 @@
+ <ion-view title="User Acept">
+	  <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		</ion-nav-buttons>
+	
+        <ion-content has-header="true" padding="true">
+		
+		
+  <div class="list">
+	
+		  
+				  <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">From Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="userAccpt.fromDate" >
+                  </label>            
+				</div>
+			  </div>
+			   <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">To Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="userAccpt.toDate" >
+                  </label>            
+				</div>
+			  </div>
+		  
+		  
+		 	
+			  <div class="item item-input-inset button-margin-from-inputfield border-background-for_label-inputfield"> 
+				<div class="label-width-first">						
+				</div>
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width" >                                 
+            <button  class="button button-block button-calm" ng-click="doUserAcceptAction(userAccpt)" style="width:100%;">
+			 Search
+			</button>                    
+            </div>
+			  </div>  
+		
+		</div>
+		
+		
+			<ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror1('head', 'list')">
+       
+		 <div class="item item-header item-positive row row-item acs-width-area">
+          <div class="col col-center acs-slno">SL</div>
+          <div class="col col-center acs-date-amout">Order No</div>
+          <div class="col col-left acs-narration" >Order Date</div>
+		   <div class="col col-right acs-date-amout" >Order Type</div>
+          <div class="col col-right acs-date-amout">Amount</div>
+		   <div class="col col-left acs-date-amout">Accept</div>
+		   
+			 
+		   
+        
+        </div>
+      </ion-scroll>
+	   <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror1('list', 'head')" delegate-handle="list"  >
+	  
+        <div class="item row row-item acs-width-area" ng-repeat="x in clientUserAccptList.userAcceptanceListNodes " ng-class-odd="'odd'" ng-class-even="'even'" >
+          <div class="col col-center col-sep acs-slno">{{x.slNo}}</div>
+          <div class="col col-center col-sep  acs-date-amout">{{ x.Order_no}}</div>
+          <div class="col col-left col-sep  acs-narration">{{x.order_date}}</div>
+          <div class="col col-right col-sep acs-date-amout">{{ x.payment_tye }}</div>
+		   <div class="col col-right col-sep  acs-date-amout">{{ x.total_order_amount  }}</div>
+			<div class="col col-center col-sep acs-date-amout">
+			
+				<div class="btn-seach_button">
+				<a class="button button-outline icon-right ion-checkmark-round button-balanced btn-seach_button" ng-click="btnUserAcceptAction(x)"></a>
+				</div>
+			</div>
+			
+      
+        </div>
+     
+
+      </ion-scroll>
+        </ion-content>
+      </ion-view>

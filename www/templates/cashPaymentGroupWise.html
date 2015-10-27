@@ -1,0 +1,84 @@
+    <ion-view title="Group Wise">
+	    <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+			  </ion-nav-buttons>
+        <ion-content has-header="true" padding="true">		
+	<div class="list"> 
+		
+		
+		 
+			  	  <div class="item item-input-inset border-background-for_label-inputfield top-marging-below-actionvbar" >    
+			
+					<div class="label-width-first">
+						<span class="input-label">From Date</span>		
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                <label class="item-input-wrapper input-textfield-custom">                  
+                 <input type="date" ng-model="search.cashFromDate" >
+                </label>            
+            </div>
+			  </div>
+			  
+		  
+		  
+			 
+			  	  <div class="item item-input-inset border-background-for_label-inputfield top-marging-below-actionvbar" >    
+			
+					<div class="label-width-first">
+						<span class="input-label">To date</span>		
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                <label class="item-input-wrapper input-textfield-custom">                  
+                 	<input type="date" ng-model="search.cashToDate" >
+                </label>            
+            </div>
+			  </div>
+			  
+			
+	
+ 
+		<div class="item item-input-inset button-margin-from-inputfield border-background-for_label-inputfield"> 
+				<div class="label-width-first">						
+				</div>
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width" >                   
+           
+			<button  class="button button-block button-calm"   ng-click="btnSearchCashAmountGroupWise(search)" style="width:100%;">
+			 Search
+			</button>                    
+            </div>
+			  </div>  
+		</div>  
+			
+	
+	
+		<ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror1('head', 'list')">
+       
+		 <div class="item item-header item-positive row row-item cash-amount-group-width-area">
+          <div class="col col-center acs-slno">SL No.</div>
+          <div class="col col-left cash-amount-group-amout">Unit</div>		  
+          <div class="col col-left cash-amount-group-acs-narration" >Account Head</div>		  
+		   <div class="col col-left cash-amount-group-amout" >Balance</div>
+          
+        
+        </div>
+      </ion-scroll>
+	   <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror1('list', 'head')" delegate-handle="list"  >
+	  
+        <div class="item row row-item cash-amount-group-width-area" ng-repeat="x in cashAmountDepWiseList.cashPaymentGroupWiseListNodes " ng-class-odd="'odd'" ng-class-even="'even'" >
+          <div class="col col-center col-sep acs-slno">{{x.slno}}</div>
+          <div class="col col-center col-sep cash-amount-group-amout">{{ x.payFrom}}</div>			  
+          <div class="col col-right col-sep  cash-amount-group-acs-narration">{{x.glCode}}</div>		   
+          <div class="col col-right col-sep cash-amount-group-amout">{{ x.payamount}}</div>	 
+			
+        </div>
+     
+
+      </ion-scroll>
+			
+	
+          
+		  
+		  
+		  
+        </ion-content>
+      </ion-view>

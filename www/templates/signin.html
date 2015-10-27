@@ -1,0 +1,49 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+ <ion-view view-title="RRM">
+        <ion-content class="padding">
+		<!--
+			<div style="width: 300px; height: 10px;" class="spacer"></div>
+            <div style="line-height: 20px; background-color: rgb(255, 255, 255); text-align: center; vertical-align: center;">
+                <img style="vertical-align: center;" src="img/icon.png"/>
+            </div>
+            -->
+			
+			  <p class="input-label-welcome-message">Welcome To RRM</p>
+          <div class="list"> 
+			<label class="sing-in-user-label ">
+				<span class="input-label input-label-user-ID">User ID</span>    
+			  </label>		  
+            <div class="item item-input-inset item-input-inset-margin" style="border: none;">				
+                <label class="item-input-wrapper input-textfield-custom">
+                    <i class="icon ion-person placeholder-icon positive icon-person-custom"></i>
+                    <input type="text" placeholder="User ID" ng-model="user.uname" >
+                </label>
+            </div>
+			<label  class="sing-in-user-label">
+				<span class="input-label input-label-user-ID">Password</span>    
+			  </label>	
+            <div class="item item-input-inset item-input-inset-margin " style="border: none;">
+                <label class="item-input-wrapper input-textfield-custom">
+                    <i class="icon ion-locked placeholder-icon positive"></i>
+                    <input type="password" placeholder="Password" ng-model="user.pass" >
+                </label>            
+            </div>
+          
+			<div class=" sign-in-button">
+			 <button class="button button-block button-positive"  ng-click="login(user)">
+                        <i class="icon-left ion-log-in icon-btn-custom"></i>&nbsp;Sign in
+                    </button>        
+			</div>
+			
+		
+			 
+				<div style="margin-top:30%">
+				</div>
+            
+          </div>
+		  </ion-content>
+      </ion-view>

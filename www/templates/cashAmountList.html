@@ -1,0 +1,22 @@
+ <ion-view title="Select Cash List">
+	  <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		</ion-nav-buttons>
+	
+        <ion-content has-header="true" padding="true">
+		
+		
+		<div class="list"> 
+  
+		  <ion-list>
+            <ion-item  class="item item-icon-right list-item-view" ng-repeat="item in items" ng-class="{ active: item.isActive}" ng-click="selectedItemAction(item)">
+			  <i class="icon {{ item.icon }}"></i>
+              {{ item.textTilte }}
+			   <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+          </ion-list>
+          <ion-infinite-scroll></ion-infinite-scroll>
+		
+		</div>
+        </ion-content>
+      </ion-view>

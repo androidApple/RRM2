@@ -1,0 +1,92 @@
+ <ion-view title="Cash Payment Dept Wise">
+	  <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		</ion-nav-buttons>
+	
+        <ion-content has-header="true" padding="true">
+		
+		
+  <div class="list">
+		
+			
+	
+		  	 <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">Party</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                <label class="item-input-wrapper input-textfield-custom item item-input item-select" style="width:100%">
+				<select ng-model="cashPaymentdept.cashPaymentExpanseName">
+				  <option value="" ng-selected="selected">{{cashPaymentdept.select}}</option>
+						<option ng-repeat="x in cashPaymentDeptWiseExpenseList.companyNameIDNodes" >{{x.companyNameID}}</option>
+				</select>
+			</label>          
+				</div>
+			  </div>
+		  
+				  <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">From Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="cashPaymentdept.fromDate" >
+                  </label>            
+				</div>
+			  </div>
+			   <div class="item item-input-inset border-background-for_label-inputfield">		
+					<div class="label-width-first">
+							<span class="input-label">To Date</span>
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                 <label class="item-input-wrapper input-textfield-custom">                  
+                  <input type="date" ng-model="cashPaymentdept.toDate" >
+                  </label>            
+				</div>
+			  </div>
+		  
+		  
+		 	
+			  <div class="item item-input-inset button-margin-from-inputfield border-background-for_label-inputfield"> 
+				<div class="label-width-first">						
+				</div>
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width" >                                 
+            <button  class="button button-block button-calm" ng-click="doSearachAction(cashPaymentdept)" style="width:100%;">
+			 Search
+			</button>                    
+            </div>
+			  </div>  
+		
+		</div>
+		
+		
+			<ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror1('head', 'list')">
+       
+		 <div class="item item-header item-positive row row-item acs-width-area">
+          <div class="col col-center acs-slno">SL</div>
+          <div class="col col-center acs-date-amout">Payment Date</div>
+          <div class="col col-left acs-narration" >Account Head</div>
+		   <div class="col col-right acs-narration" >Pay Description</div>
+          <div class="col col-right acs-date-amout">Amount</div>
+		
+		   
+        
+        </div>
+      </ion-scroll>
+	   <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror1('list', 'head')" delegate-handle="list"  >
+	  
+        <div class="item row row-item acs-width-area" ng-repeat="x in cashPaymentDeptWiseList.cashPaymentDeptWiseListNodes " ng-class-odd="'odd'" ng-class-even="'even'" >
+          <div class="col col-center col-sep acs-slno">{{x.slNo}}</div>
+          <div class="col col-center col-sep  acs-date-amout">{{ x.paymentdate}}</div>
+          <div class="col col-left col-sep  acs-narration">{{x.accountHead}}</div>
+          <div class="col col-right col-sep  acs-narration">{{ x.paydesciption }}</div>
+		   <div class="col col-right col-sep  acs-date-amout">{{ x.amount  }}</div>
+			
+			   
+      
+        </div>
+     
+
+      </ion-scroll>
+        </ion-content>
+      </ion-view>

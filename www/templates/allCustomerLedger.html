@@ -1,0 +1,93 @@
+    <ion-view title="All Customer">
+	    <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+			  </ion-nav-buttons>
+        <ion-content has-header="true" padding="true">		
+	<div class="list"> 
+		
+		
+		 
+			  	  <div class="item item-input-inset border-background-for_label-inputfield top-marging-below-actionvbar" >    
+			
+					<div class="label-width-first">
+						<span class="input-label">From Date</span>		
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                <label class="item-input-wrapper input-textfield-custom">                  
+                 <input type="date" ng-model="search.allCustomerFromDate" >
+                </label>            
+            </div>
+			  </div>
+			  
+		  
+		  
+			 
+			  	  <div class="item item-input-inset border-background-for_label-inputfield top-marging-below-actionvbar" >    
+			
+					<div class="label-width-first">
+						<span class="input-label">To date</span>		
+					</div>				
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width">
+                <label class="item-input-wrapper input-textfield-custom">                  
+                 	<input type="date" ng-model="search.allCustomerToDate" >
+                </label>            
+            </div>
+			  </div>
+			  
+			
+	
+ 
+		<div class="item item-input-inset button-margin-from-inputfield border-background-for_label-inputfield"> 
+				<div class="label-width-first">						
+				</div>
+				<div class="item item-input-inset input-label-inputfiled11 input-filed-width" >                   
+           
+			<button  class="button button-block button-calm"   ng-click="AllCustomerLdedgerSearchAction(search)" style="width:100%;">
+			 Search
+			</button>                    
+            </div>
+			  </div>  
+		</div>  
+			
+	
+	
+		<ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror1('head', 'list')">
+       
+		 <div class="item item-header item-positive row row-item acs-width-area">
+          <div class="col col-center acs-slno">SL</div>
+          <div class="col col-center acs-date-amout">Customer ID</div>
+          <div class="col col-left acs-narration" >Customer Name</div>
+		   <div class="col col-right acs-date-amout" >Average Rate</div>
+          <div class="col col-right acs-date-amout">Qty</div>
+		   <div class="col col-left acs-date-amout">Receivable</div>
+		   <div class="col col-left acs-date-amout">Received</div>
+		    <div class="col col-left acs-date-amout">Balance</div>
+		   
+        
+        </div>
+      </ion-scroll>
+	   <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror1('list', 'head')" delegate-handle="list"  >
+	  
+        <div class="item row row-item acs-width-area" ng-repeat="x in singleAllCustomerListStatement.customerLedgerListNodes " ng-class-odd="'odd'" ng-class-even="'even'" >
+          <div class="col col-center col-sep acs-slno">{{x.slNo}}</div>
+          <div class="col col-center col-sep  acs-date-amout">{{ x.customerID}}</div>
+          <div class="col col-left col-sep  acs-narration">{{x.customerName}}</div>
+          <div class="col col-right col-sep acs-date-amout">{{ x.averageRate }}</div>
+		   <div class="col col-right col-sep  acs-date-amout">{{ x.qty  }}</div>
+			<div class="col col-right col-sep acs-date-amout">{{ x.receivable}}</div>
+			<div class="col col-right col-sep acs-date-amout">{{ x.received}}</div>
+			<div class="col col-right col-sep  acs-date-amout">{{ x.balance }}</div>
+			   
+      
+        </div>
+     
+
+      </ion-scroll>
+			
+	
+          
+		  
+		  
+		  
+        </ion-content>
+      </ion-view>

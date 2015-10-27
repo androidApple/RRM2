@@ -1,0 +1,24 @@
+<div class="adic-modal">
+  <ion-modal-view class="adic-popup">
+        <ion-header-bar class="bar bar-header bar-royal">
+          <h4 class="title">Product Rate</h4>
+          <button class="button button-clear button-primary" ng-click="clientpuarchaseModelHide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+				<div class="list list-inset">
+		  <label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="input.searchInput">
+		  </label>
+		</div>
+		
+
+			  
+		<div class="list margin-for-modal-list" ng-repeat="x in productRateList.productRateNodes | filter:input.searchInput" ng-click="btnProductItemSelectName(x)" >
+			
+			 <a class="item item-model-text">{{x.productCOde}}&nbsp;&nbsp;&nbsp;&nbsp;{{x.productName}}&nbsp;&nbsp;&nbsp;&nbsp;{{x.productRate}}</a>
+		 
+		</div>
+        </ion-content>
+      </ion-modal-view>
+ </div>
