@@ -51,7 +51,7 @@
   
   
    <!-- Core plugins -->
-    <gap:plugin name="com.brodysoft.sqliteplugin" />
+  <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
   
 
     <gap:plugin name="org.apache.cordova.device-orientation" />
